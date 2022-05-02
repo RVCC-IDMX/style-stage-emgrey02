@@ -36,7 +36,7 @@ https://glitch.com/edit/#!/build-excellent-websites?path=src%2Fdesign-tokens%2Ft
   --grey-light: hsl(0, 0%, 20%);
   --purple-dark: hsl(273, 23%, 81%);
   --purple-light: #e9e3ed;
-  --green-light: hsl(64, 18%, 55%);
+  --green-light: #9ea178;
   --green-dark: hsl(64, 18%, 30%);
   --link-blue: hsl(255, 100%, 59%);
 }
@@ -81,6 +81,7 @@ h1 {
   line-height: 1;
   color: inherit;
   padding-block-start: var(--space-l);
+  position: relative;
 }
 
 h2, h3, h4 {
@@ -177,7 +178,7 @@ div.container {
   display: grid;
   grid-gap: var(--space-xs);
   padding-block: var(--space-m);
-  max-width: 60ch;
+  max-width: 65ch;
   margin-inline: auto;
 }
 
@@ -218,12 +219,61 @@ ol > * + * {
 /* nav styles */
 
 nav {
-  width: 100%;
   margin-block: var(--space-m);
+  width: 100%;
 }
 
 nav > ul {
   margin-inline: auto;
+  flex-direction: column;
+  gap: 1em;
+  border: 1px solid var(--grey-dark);
+  padding: 1em 2em;
+}
+
+@media (min-width: 1200px) {
+  nav {
+    position: absolute;
+    width: fit-content;
+    inset-block-start: 1em;
+    inset-inline-end: 0;
+  }
+  
+  nav > ul {
+    border-right: none;
+  }
+}
+
+/* h1 styles */
+
+@media (min-width: 1000px) {
+  h1::after {
+    content: url('https://res.cloudinary.com/greypse/image/upload/v1651515706/Vector_sohww1.svg');
+    display: block;
+    clip-path: inset(0 100% 0 0);
+    animation: underline 2s linear 500ms forwards;
+  }
+  
+  @keyframes underline {
+    from {
+      clip-path: inset(0 100% 0 0);
+    }
+  
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    animation-play-state: paused;
+  }
+}
+
+/* header styles */
+header {
+  position: relative;
 }
 
 /* print styles */
@@ -248,4 +298,5 @@ nav > ul {
     display: none;
   }
 }
+
 

@@ -30,6 +30,7 @@ https://glitch.com/edit/#!/build-excellent-websites?path=src%2Fdesign-tokens%2Ft
   --step-2: clamp(1.44rem, calc(1.11rem + 1.65vw), 2.50rem);
   --step-3: clamp(1.73rem, calc(1.17rem + 2.80vw), 3.53rem);
   --step-4: clamp(2.07rem, calc(1.17rem + 4.54vw), 5.00rem);
+  --step-5: clamp(3rem, calc(2rem + 6vw), 8rem);
 
   /* colors */
   --grey-dark: hsl(0, 0%, 7%);
@@ -77,11 +78,16 @@ svg {
 
 h1 {
   font-family: 'Azeret Mono', monospace;
-  font-size: var(--step-4);
+  font-size: var(--step-5);
   line-height: 1;
-  color: inherit;
+  color: var(--green-dark);
   padding-block-start: var(--space-l);
   position: relative;
+  transition: text-shadow 300ms;
+}
+
+h1:hover {
+  text-shadow: 5px 5px 0px var(--green-light), 10px 10px 0px #ffffff;
 }
 
 h2, h3, h4 {
@@ -181,7 +187,6 @@ div.container {
   padding-block: var(--space-m);
   max-width: 65ch;
   margin-inline: auto;
-  
 }
 
 div.container {
@@ -211,6 +216,17 @@ ul > * {
 
 :where(ul, ol) {
   list-style-position: inside;
+}
+
+section > ul > li::before {
+  content: "";
+  height: 1em;
+  width: 2em;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651522591/Vector_vpdbbf.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  display: inline-block;
 }
 
 ol,
@@ -285,7 +301,9 @@ nav > ul {
     content: url('https://res.cloudinary.com/greypse/image/upload/v1651515706/Vector_sohww1.svg');
     display: block;
     clip-path: inset(0 100% 0 0);
+    transform: rotate(-10deg) translateX(4em) translateY(.5em);
     animation: underline 2s linear 500ms forwards;
+    width: fit-content;
   }
   
   @keyframes underline {
@@ -308,6 +326,55 @@ nav > ul {
 /* header styles */
 header {
   position: relative;
+}
+
+/* profile aside */
+
+aside.profile {
+  position: fixed;
+  inset-inline-end: 0;
+  inset-block-start: 30%;
+  background-color: var(--purple-dark);
+  transform: translateX(calc(100% - 3em));
+  transition: transform 300ms;
+}
+
+aside.profile:hover,
+aside.profile:focus-within {
+  transform: translateX(0%);
+}
+
+#profile-title {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  justify-self: center;
+  border-right: 1px solid var(--grey-dark);
+  padding-inline: 1em;
+}
+
+aside.profile .container {
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 2em 1fr;
+  border: 1px solid var(--grey-dark);
+}
+
+aside.profile .container > a {
+  grid-column: 2;
+  position: absolute;
+  inset-block-end: 10%;
+  inset-inline-end: 25%;
+}
+
+aside.profile ul {
+  min-width: fit-content;
+  gap: .5em;
+  flex-direction: column;
+  padding-inline: 1em;
+}
+
+aside.profile li {
+  min-width: max-content;
 }
 
 /* print styles */

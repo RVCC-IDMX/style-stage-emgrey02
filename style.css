@@ -284,7 +284,6 @@ nav > ul {
     width: fit-content;
     inset-block-start: 1em;
     inset-inline-end: 0;
-    backdrop-filter: blur(20px);
   }
   
   nav > ul {
@@ -341,10 +340,12 @@ aside.profile {
   backdrop-filter: blur(2px);
   transform: translateX(calc(100% - 3em));
   transition: transform 300ms;
+  transition-delay: 200ms;
 }
 
 aside.profile:hover,
-aside.profile:focus-within {
+aside.profile:focus-within,
+aside.profile:active {
   transform: translateX(0%);
   background-color: var(--purple-dark);
 }

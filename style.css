@@ -159,6 +159,12 @@ a[class]:focus {
   color: var(--grey-dark);
 }
 
+@media (prefers-reduced-motion) {
+  a[class]:hover::after {
+    transform: none;
+  }
+}
+
 /* link styles */
 /* underline currently doesn't show up on iPhone */
 a:not([class]) {
@@ -338,6 +344,7 @@ nav > ul {
     animation: underline 2s linear 500ms forwards;
     width: fit-content;
     position: absolute;
+    z-index: 2;
   }
   
   @keyframes underline {
@@ -352,8 +359,9 @@ nav > ul {
 }
 
 @media (prefers-reduced-motion) {
-  * {
-    animation-play-state: paused;
+  h1::after {
+    animation: none;
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -578,27 +586,18 @@ section.container:nth-child(2),
   #contribute section.container:first-child:hover::after {
     transform: translate(1em, -1em) scale(1.01);
   }
+}
 
-  @keyframes shake {
-    0% {
-      transform: rotate(0deg);
-    }
+@media (prefers-reduced-motion) {
+  #about section.container:first-child:hover::before,
+  #about section.container:nth-child(2):hover::after,
+  #guidelines:hover::after,
+  #contribute section.container:first-child:hover::after {
+    transform: none;
+  }
 
-    30% {
-      transform: rotate(5deg);
-    }
-
-    50% {
-      transform: rotate(0deg);
-    }
-
-    70% {
-      transform: rotate(-5deg);
-    }
-
-    90% {
-      transform: rotate(0deg);
-    }
+  #about section.container:nth-child(2):hover::before {
+    transform: rotate(-30deg);
   }
 }
 

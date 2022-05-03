@@ -1,5 +1,5 @@
 /* import DM Mono and VT323 fonts */
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@800&family=DM+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=DM+Mono:wght@300;400;500&display=swap');
 
 /* import godlike css reset */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/godlike.css/3.8.0/godlike.min.css');
@@ -30,10 +30,10 @@ https://glitch.com/edit/#!/build-excellent-websites?path=src%2Fdesign-tokens%2Ft
   --step-2: clamp(1.44rem, calc(1.11rem + 1.65vw), 2.50rem);
   --step-3: clamp(1.73rem, calc(1.17rem + 2.80vw), 3.53rem);
   --step-4: clamp(2.07rem, calc(1.17rem + 4.54vw), 5.00rem);
-  --step-5: clamp(3rem, calc(2rem + 6vw), 8rem);
+  --step-5: clamp(5rem, calc(6rem + 6vw), 20rem);
 
   /* colors */
-  --grey-dark: hsl(0, 0%, 7%);
+  --grey-dark: #121212;
   --grey-light: hsl(0, 0%, 20%);
   --purple-dark: hsl(273, 23%, 81%);
   --purple-light: #e9e3ed;
@@ -77,13 +77,19 @@ svg {
 }
 
 h1 {
-  font-family: 'Azeret Mono', monospace;
-  font-size: var(--step-5);
-  line-height: 1;
+  font-family: 'Amatic SC', cursive;
+  font-size: 6rem;
+  line-height: .8;
   color: var(--green-dark);
   padding-block-start: var(--space-l);
   position: relative;
   transition: text-shadow 300ms;
+}
+
+@media (min-width: 600px) {
+  h1 {
+    font-size: var(--step-5);
+  }
 }
 
 h1:hover {
@@ -116,6 +122,7 @@ p {
 a {
   pointer-events: all;
 }
+
 /* button styles */
 
 a[class] {
@@ -124,11 +131,27 @@ a[class] {
   box-shadow: 0 0 0 1px rgb(0,0,0);
   width: fit-content;
   transition: background-color 300ms, box-shadow 300ms, transform 300ms ease, color 300ms;
+  padding-inline-end: 2em;
+}
+
+a[class]::after {
+  content: '';
+  width: 1em;
+  height: 1em;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651614104/icons8-up-right-48_v70d6i.png');
+  position: absolute;
+  margin-inline-start: .5em;
+  background-size: 100%;
+  transition: transform 200ms;
 }
 
 a[class]:hover {
   background-color: var(--green-light);
   color: var(--grey-dark);
+}
+
+a[class]:hover::after {
+  transform: translate(1em, -1em) scale(1.5);
 }
 
 a[class]:focus {
@@ -311,9 +334,10 @@ nav > ul {
     content: url('https://res.cloudinary.com/greypse/image/upload/v1651515706/Vector_sohww1.svg');
     display: block;
     clip-path: inset(0 100% 0 0);
-    transform: rotate(-10deg) translateX(4em) translateY(.5em);
+    transform: rotate(-5deg) translateY(-.4em) translateX(1.3em);
     animation: underline 2s linear 500ms forwards;
     width: fit-content;
+    position: absolute;
   }
   
   @keyframes underline {
@@ -350,15 +374,20 @@ aside.profile .container > a {
   text-align: center;
 }
 
+aside.profile .container {
+  border: 1px solid var(--grey-dark);
+  padding-inline: 1em;
+}
+
 @media (min-width: 1000px) {
   aside.profile {
     position: fixed;
     inset-inline-end: 0;
     inset-block-start: 30%;
-    backdrop-filter: blur(2px);
     transform: translateX(calc(100% - 3em));
     transition: transform 300ms;
     transition-delay: 200ms;
+    z-index: 2;
   }
   
   aside.profile:hover,
@@ -380,7 +409,7 @@ aside.profile .container > a {
     margin: 0;
     padding: 0;
     grid-template-columns: 2em 1fr;
-    border: 1px solid var(--grey-dark);
+    
     position: relative;
     background-color: var(--purple-dark);
   }
@@ -405,6 +434,8 @@ aside.profile .container > a {
 
 #files div.container {
   justify-items: center;
+  align-items: center;
+  max-width: max-content;
 }
 
 #files a {
@@ -415,7 +446,6 @@ aside.profile .container > a {
 @media (min-width: 750px) {
   #files div.container {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap: var(--space-m);
   }
 
   #files h3 {

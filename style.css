@@ -1,4 +1,4 @@
-/* import DM Mono and VT323 fonts */
+/* import DM Mono and Amatic SC fonts */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=DM+Mono:wght@300;400;500&display=swap');
 
 /* import godlike css reset */
@@ -35,7 +35,7 @@ https://glitch.com/edit/#!/build-excellent-websites?path=src%2Fdesign-tokens%2Ft
   /* colors */
   --grey-dark: #121212;
   --grey-light: hsl(0, 0%, 20%);
-  --purple-dark: hsl(273, 23%, 81%);
+  --purple-dark: #d0c3da;
   --purple-light: #e9e3ed;
   --green-light: #9ea178;
   --green-dark: hsl(64, 18%, 30%);
@@ -231,6 +231,7 @@ div.container {
     border-right: 1px solid var(--grey-dark);
     border-left: 1px solid var(--grey-dark);
     margin-inline: var(--space-l);
+    padding-inline: 0;
   }
 }
 
@@ -239,6 +240,7 @@ div.container {
 li {
   display: list-item;
   text-align: -webkit-match-parent;
+  align-self: center;
 }
 
 ul {
@@ -255,12 +257,13 @@ ul > * {
 section > ul > li::before {
   content: "";
   height: 1em;
-  width: 2em;
-  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651522591/Vector_vpdbbf.svg');
+  width: 1em;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651625732/Vector_6_ruynxg.svg');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 60%;
+  background-size: 80%;
   display: inline-block;
+  margin-inline-end: .5em;
 }
 
 ol,
@@ -368,6 +371,7 @@ nav > ul {
 /* header styles */
 header {
   position: relative;
+  padding-inline: 1em;
 }
 
 /* profile aside */
@@ -480,8 +484,9 @@ aside#styles div.container a {
 }
 
 aside#styles div.container li {
-  border: 1px dashed var(--grey-dark);
+  box-shadow: -5px -5px 0 var(--green-light), 10px 10px 0 var(--green-dark);
   padding: 3em .5em;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651623068/ffflux_2_seqtxl.svg');
 }
 
 /* illustrations */
@@ -603,6 +608,11 @@ section.container:nth-child(2),
 
 
 /* footer styles */
+.page-footer {
+  background-image: url("https://res.cloudinary.com/greypse/image/upload/v1651624738/stacked-peaks-haikei_j6txqj.svg");
+  background-size: cover;
+}
+
 .page-footer ul {
   justify-content: center;
   justify-self: center;
@@ -620,7 +630,7 @@ section.container:nth-child(2),
   content: '';
   width: 100%;
   height: 1px;
-  background-color: var(--grey-dark);
+  background-color: var(--grey-dark); 
   display: block;
   position: absolute;
   inset-inline-start: 0;
@@ -644,7 +654,7 @@ section.container:nth-child(2),
 
 /* blockquote styles */
 blockquote {
-  box-shadow: -1px -1px 0 var(--grey-dark);
+  box-shadow: 5px 5px 0 var(--green-light), 10px 10px 0 var(--green-dark), -1px -1px 0 var(--grey-light);
   padding-inline-start: .5em;
   margin-inline: 1em;
 }
@@ -657,6 +667,10 @@ blockquote::before {
 /* print styles */
 
 @media print {
+  h1 {
+    color: black;
+  }
+  
   body {
     background: white;
     color: black;

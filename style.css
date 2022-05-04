@@ -166,10 +166,10 @@ a[class]:focus {
 }
 
 /* link styles */
-/* underline currently doesn't show up on iPhone */
 a:not([class]) {
   color: var(--grey-light);
-  text-decoration: underline .15em;
+  text-decoration: underline;
+  text-decoration-thickness: .15em;
   text-underline-offset: var(--offset, 0.1em);
   transition: --offset 300ms, text-decoration-color 300ms, color 300ms, box-shadow 300ms;
   padding: .1em;

@@ -3,10 +3,6 @@ section.container {
   max-width: 65ch;
   margin-inline: auto;
   padding-inline: var(--space-2xs);
-
-  & p {
-    padding-block: var(--space-3xs);
-  }
 }
 
 div.container,

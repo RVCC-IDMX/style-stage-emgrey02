@@ -6,98 +6,113 @@
   pointer-events: none;
 }
 
-@media (min-width: 1200px) {
-  /* sun */
-  #about section.container:first-child h2::before {
-    content: '';
-    display: block;
-    position: absolute;
-    pointer-events: all;
-    inset-inline-end: -30%;
-    inset-block-start: -15%;
-    width: 341px;
-    height: 342px;
-    background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651612170/Vector_5_zxfzhw.svg');
-    transition: transform 300ms ease-out;
-  }
+#about section.container:first-child h2::before,
+#guidelines h2::after,
+#contribute h2::before,
+#contribute section.container h3:first-child::after,
+#about section.container:nth-child(2) h2::before {
+  content: '';
+  display: block;
+  position: absolute;
+  pointer-events: all;
+  transition: transform 300ms ease, opacity 300ms;
+  opacity: .3;
+}
 
-  #about section.container:first-child h2:hover::before {
-    transform: rotate(-20deg);
-  }
 
-  /* cloud */
-  #about section.container:nth-child(2) h2::before {
-    content: '';
-    display: block;
-    position: absolute;
-    pointer-events: all;
-    inset-inline-start: -40%;
-    inset-block-start: -5%;
-    transform: rotate(-30deg);
-    width: 330px;
-    height: 208px;
-    background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651539512/Group_szxjrx.svg');
-    transition: transform 300ms ease;
-  }
+/* sun */
+#about section.container:first-child h2::before {
+  inset-inline-end: -1em;
+  inset-block-start: -3em;
+  width: 341px;
+  height: 342px;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651612170/Vector_5_zxfzhw.svg');
 
-  #about section.container:nth-child(2) h2:hover::before {
-    transform: rotate(-5deg);
-  }
-
-  /* smile */
-  #guidelines h2::after {
-    content: '';
-    display: block;
-    position: absolute;
-    pointer-events: all;
-    inset-inline-end: -30%;
-    inset-block-end: -30%;
-    background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651539825/Vector_1_mtnnek.svg');
-    width: 317px;
-    height: 241px;
-    transition: transform 300ms ease;
-  }
-
-  #guidelines h2:hover::after {
-    transform: skew(-5deg);
-  }
-
-  /* flower */
-  #contribute h2::before {
-    content: '';
-    display: block;
-    position: absolute;
-    pointer-events: all;
-    inset-inline-start: -30%;
-    inset-block-end: 0;
-    width: 224px;
-    height: 341px;
-    background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651540243/Vector_2_lg3eb6.svg');
-    transition: transform 300ms ease;
-  }
-
-  #contribute h2:hover::before {
-    transform: scale(1.1);
-  }
-
-  /* star */
-  #contribute section.container h3::after {
-    content: '';
-    display: block;
-    position: absolute;
-    pointer-events: all;
-    inset-inline-end: -20%;
-    inset-block-end: -35%;
-    background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651543208/Vector_3_gff8qw.svg');
-    width: 312px;
-    height: 248px;
-    transition: transform 300ms ease;
-  }
-
-  #contribute section.container h3:first-child:hover::after {
-    transform: translate(1em, -1em) scale(1.01);
+  @media (min-width: 1000px) {
+    opacity: 1;
+    inset-inline-end: -5em;
   }
 }
+
+#about section.container:first-child h2:hover::before {
+  transform: rotate(-20deg);
+}
+
+/* cloud */
+#about section.container:nth-child(2) h2::before {
+  inset-inline-start: -5em;
+  inset-block-start: 0;
+  transform: rotate(-30deg);
+  width: 330px;
+  height: 208px;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651539512/Group_szxjrx.svg');
+
+  @media (min-width: 1000px) {
+    inset-inline-start: -7em;
+    opacity: 1;
+  }
+}
+
+#about section.container:nth-child(2) h2:hover::before {
+  transform: rotate(-5deg);
+}
+
+/* smile */
+#guidelines h2::after {
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651539825/Vector_1_mtnnek.svg');
+  width: 317px;
+  height: 241px;
+
+  @media (min-width: 1000px) {
+    opacity: 1;
+    inset-inline-end: -4em;
+    inset-block-end: -3em;
+  }
+}
+
+#guidelines h2:hover::after {
+  transform: skew(-5deg);
+}
+
+/* flower */
+#contribute h2::before {
+  inset-inline-start: 0;
+  inset-block-end: 5em;
+  width: 224px;
+  height: 341px;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651540243/Vector_2_lg3eb6.svg');
+
+  @media (min-width: 1000px) {
+    opacity: 1;
+    inset-inline-start: -5em;
+  }
+}
+
+#contribute h2:hover::before {
+  transform: scale(1.1);
+}
+
+/* star */
+#contribute section.container h3::after {
+  inset-inline-end: -1em;
+  inset-block-end: 0;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651543208/Vector_3_gff8qw.svg');
+  width: 312px;
+  height: 248px;
+
+  @media (min-width: 1000px) {
+    opacity: 1;
+    inset-inline-end: -8em;
+    inset-block-end: -.5em;
+  }
+}
+
+#contribute section.container h3:first-child:hover::after {
+  transform: translate(1em, -1em) scale(1.01);
+}
+
 
 @media (prefers-reduced-motion) {
   #about section.container:first-child h2:hover::before,

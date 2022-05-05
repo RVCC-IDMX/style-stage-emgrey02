@@ -1,15 +1,14 @@
-#about section.container:first-child,
-#about section.container:nth-child(2),
-#guidelines section.container,
-#contribute section.container:first-child {
+#about h2,
+#guidelines h2,
+#contribute h2,
+#contribute h3 {
   position: relative;
   pointer-events: none;
 }
 
-
 @media (min-width: 1200px) {
   /* sun */
-  #about section.container:first-child::before {
+  #about section.container:first-child h2::before {
     content: '';
     display: block;
     position: absolute;
@@ -22,12 +21,12 @@
     transition: transform 300ms ease-out;
   }
 
-  #about section.container:first-child:hover::before {
+  #about section.container:first-child h2:hover::before {
     transform: rotate(-20deg);
   }
 
   /* cloud */
-  #about section.container:nth-child(2)::before {
+  #about section.container:nth-child(2) h2::before {
     content: '';
     display: block;
     position: absolute;
@@ -41,12 +40,12 @@
     transition: transform 300ms ease;
   }
 
-  #about section.container:nth-child(2):hover::before {
+  #about section.container:nth-child(2) h2:hover::before {
     transform: rotate(-5deg);
   }
 
   /* smile */
-  #about section.container:nth-child(2)::after {
+  #guidelines h2::after {
     content: '';
     display: block;
     position: absolute;
@@ -59,12 +58,12 @@
     transition: transform 300ms ease;
   }
 
-  #about section.container:nth-child(2):hover::after {
+  #guidelines h2:hover::after {
     transform: skew(-5deg);
   }
 
   /* flower */
-  #guidelines section.container::after {
+  #contribute h2::before {
     content: '';
     display: block;
     position: absolute;
@@ -77,12 +76,12 @@
     transition: transform 300ms ease;
   }
 
-  #guidelines section.container:hover::after {
+  #contribute h2:hover::before {
     transform: scale(1.1);
   }
 
   /* star */
-  #contribute section.container:first-child::after {
+  #contribute section.container h3::after {
     content: '';
     display: block;
     position: absolute;
@@ -95,20 +94,20 @@
     transition: transform 300ms ease;
   }
 
-  #contribute section.container:first-child:hover::after {
+  #contribute section.container h3:first-child:hover::after {
     transform: translate(1em, -1em) scale(1.01);
   }
 }
 
 @media (prefers-reduced-motion) {
-  #about section.container:first-child:hover::before,
-  #about section.container:nth-child(2):hover::after,
-  #guidelines:hover::after,
-  #contribute section.container:first-child:hover::after {
+  #about section.container:first-child h2:hover::before,
+  #guidelines h2:hover::after,
+  #contribute h2:hover::before,
+  #contribute section.container h3:first-child:hover::after {
     transform: none;
   }
 
-  #about section.container:nth-child(2):hover::before {
+  #about section.container:nth-child(2) h2:hover::before {
     transform: rotate(-30deg);
   }
 }

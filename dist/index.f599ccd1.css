@@ -382,7 +382,7 @@ a[class]:after {
   content: "";
   width: 1em;
   height: 1em;
-  background-image: url("https://res.cloudinary.com/greypse/image/upload/v1651614104/icons8-up-right-48_v70d6i.png");
+  background-image: url("https://res.cloudinary.com/greypse/image/upload/v1651782361/arrow-up-right-svgrepo-com_cn0p6d.svg");
   background-size: 100%;
   margin-inline-start: .5em;
   transition: transform .2s;
@@ -662,4 +662,4 @@ h1 {
   }
 }
 
-/*# sourceMappingURL=index.2ecb8078.css.map */
+/*# sourceMappingURL=index.f599ccd1.css.map */

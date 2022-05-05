@@ -1,0 +1,6 @@
+header div.container {
+  width: min(100vw - 2rem, 100ch);
+  margin-inline: auto;
+  padding-block-start: var(--space-l);
+  margin-block: 0;
+}

@@ -1,0 +1,33 @@
+h1 {
+    padding-block-end: var(--space-m);
+}
+
+@media (min-width: 1000px) {
+    h1::after {
+      content: url('https://res.cloudinary.com/greypse/image/upload/v1651515706/Vector_sohww1.svg');
+      display: block;
+      clip-path: inset(0 100% 0 0);
+      transform: rotate(-5deg) translateY(-.4em) translateX(1.3em);
+      animation: underline 2s linear 500ms forwards;
+      width: fit-content;
+      position: absolute;
+      z-index: 2;
+    }
+    
+    @keyframes underline {
+      from {
+        clip-path: inset(0 100% 0 0);
+      }
+    
+      to {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+  }
+  
+  @media (prefers-reduced-motion) {
+    h1::after {
+      animation: none;
+      clip-path: inset(0 0 0 0);
+    }
+  }

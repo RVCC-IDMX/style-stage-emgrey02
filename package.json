@@ -1,0 +1,26 @@
+{
+  "name": "style-stage-emgrey02",
+  "version": "1.0.0",
+  "description": "> NOTE: This challenge is partly an exercise in accessibility and layout. One default property that tends to make layout hard are lists. This is because the position of the list marker (or list style) is, by default, outside of the element. Consider changing the marker to be inside the element.",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel",
+    "build": "parcel build --no-optimize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RVCC-IDMX/style-stage-emgrey02.git"
+  },
+  "keywords": [],
+  "author": "Emma Grey <emgrey02@gmail.com> (https://github.com/emgrey02)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RVCC-IDMX/style-stage-emgrey02/issues"
+  },
+  "homepage": "https://github.com/RVCC-IDMX/style-stage-emgrey02#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.5.0",
+    "parcel": "^2.5.0",
+    "sass": "^1.51.0"
+  }
+}

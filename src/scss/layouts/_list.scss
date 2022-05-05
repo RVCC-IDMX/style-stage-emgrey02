@@ -1,0 +1,44 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  justify-content: center;
+
+  & > * {
+    margin: .5em 0;
+  }
+}
+
+section > ul > li::before {
+  content: "";
+  height: 1em;
+  width: 1em;
+  background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651625732/Vector_6_ruynxg.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  display: inline-block;
+  margin-inline-end: .5em;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+
+  li {
+    position: relative;
+    padding-inline-start: 2em;
+  }
+
+  li::before {
+    content: counter(list-item);
+    position: absolute;
+    inset-inline-start: 0;
+    font-family: 'Amatic SC', cursive;
+    font-size: var(--step-3);
+    line-height: 1;
+    color: var(--green-dark);
+  }
+}
+

@@ -1,0 +1,41 @@
+body {
+	font-family: 'DM Mono', monospace;
+	font-size: var(--step-0);
+	line-height: 1.5;
+	color: var(--grey-light);
+	transition: font-size 300ms ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	line-height: 1;
+	color: var(--grey-dark);
+	text-transform: uppercase;
+	max-width: 30ch;
+}
+
+h1 {
+	font-family: 'Amatic SC', cursive;
+  font-size: var(--step-5);
+  line-height: .8;
+  color: var(--green-dark);
+	transition: text-shadow 300ms;
+
+	&:hover {
+		text-shadow: 5px 5px 0px var(--green-light), 10px 10px 0px #ffffff;
+	}
+}
+
+h2 {
+	font-size: var(--step-3);
+}
+
+h3 {
+	font-size: var(--step-2);
+}
+
+h4 {
+	font-size: var(--step-1);
+}

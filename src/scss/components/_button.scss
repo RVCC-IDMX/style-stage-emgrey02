@@ -1,0 +1,37 @@
+a[class] {
+  background-color: var(--purple-dark);
+  padding: 0.5em 1em;
+  box-shadow: 0 0 0 1px rgb(0,0,0);
+  width: fit-content;
+  transition: background-color 300ms, box-shadow 300ms, transform 300ms ease, color 300ms;
+  padding-inline-end: 2em;
+
+  &::after {
+    content: '';
+    width: 1em;
+    height: 1em;
+    background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651614104/icons8-up-right-48_v70d6i.png');
+    position: absolute;
+    margin-inline-start: .5em;
+    background-size: 100%;
+    transition: transform 200ms;
+  }
+
+  &:hover {
+    background-color: var(--green-light);
+    color: var(--grey-dark);
+
+    &::after {
+      transform: translate(1em, -1em) scale(1.5);
+
+      @media (prefers-reduced-motion) {
+        transform: none;
+      }
+    }
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 5px rgb(0,0,0);
+    color: var(--grey-dark);
+  }
+}

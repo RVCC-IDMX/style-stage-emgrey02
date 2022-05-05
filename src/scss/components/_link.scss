@@ -1,0 +1,36 @@
+/* for text-underline-offset animation support */
+@property --offset {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 2px;
+}
+
+a:not([class]) {
+  color: var(--grey-light);
+  text-decoration: underline;
+  text-decoration-thickness: .15em;
+  text-underline-offset: var(--offset, 0.1em);
+  transition: --offset 300ms, text-decoration-color 300ms, color 300ms, box-shadow 300ms;
+  padding: .1em;
+  font-weight: 500;
+
+  &:hover {
+    --offset: .4em;
+    text-decoration-color: var(--link-blue);
+    color: var(--link-blue);
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 .2em var(--link-blue);
+  }
+}
+
+@supports not (background:paint(something)) {
+  a:not([class]) {
+    transition: text-underline-offset 300ms, text-decoration-color 300ms;
+
+    &:hover {
+      text-underline-offset: 0.4em;
+    }
+  }
+}

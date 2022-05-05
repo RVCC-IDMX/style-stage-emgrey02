@@ -1,0 +1,25 @@
+aside#styles {
+    margin-inline: var(--space-2xs);
+
+    & div.container {
+        width: fit-content;
+        margin-inline: auto;
+        grid-gap: var(--space-m);
+        align-items: center;
+        justify-items: center;
+    }
+
+    & ul {
+        gap: var(--space-m);
+    }
+
+    & a {
+        display: block;
+    }
+
+    & li {
+        box-shadow: -5px -5px 0 var(--green-light), 10px 10px 0 var(--green-dark);
+        padding: 3em .5em;
+        background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651623068/ffflux_2_seqtxl.svg');
+    }
+}

@@ -7,16 +7,17 @@
 }
 
 #about section.container:first-child h2::before,
+#about section.container:nth-child(2) h2::before,
 #guidelines h2::after,
 #contribute h2::before,
-#contribute section.container h3:first-child::after,
-#about section.container:nth-child(2) h2::before {
+#contribute section.container h3::after {
   content: '';
   display: block;
   position: absolute;
   pointer-events: all;
   transition: transform 300ms ease, opacity 300ms;
   opacity: .3;
+  z-index: -1;
 }
 
 
@@ -31,6 +32,7 @@
   @media (min-width: 1000px) {
     opacity: 1;
     inset-inline-end: -5em;
+    z-index: 2;    
   }
 }
 
@@ -50,6 +52,7 @@
   @media (min-width: 1000px) {
     inset-inline-start: -7em;
     opacity: 1;
+    z-index: 2;    
   }
 }
 
@@ -69,6 +72,7 @@
     opacity: 1;
     inset-inline-end: -4em;
     inset-block-end: -3em;
+    z-index: 2;
   }
 }
 
@@ -87,6 +91,7 @@
   @media (min-width: 1000px) {
     opacity: 1;
     inset-inline-start: -5em;
+    z-index: 2;
   }
 }
 
@@ -106,19 +111,21 @@
     opacity: 1;
     inset-inline-end: -8em;
     inset-block-end: -.5em;
+    z-index: 2;
   }
 }
 
-#contribute section.container h3:first-child:hover::after {
+#contribute section.container h3:hover::after {
   transform: translate(1em, -1em) scale(1.01);
 }
+
 
 
 @media (prefers-reduced-motion) {
   #about section.container:first-child h2:hover::before,
   #guidelines h2:hover::after,
   #contribute h2:hover::before,
-  #contribute section.container h3:first-child:hover::after {
+  #contribute section.container h3:hover::after {
     transform: none;
   }
 

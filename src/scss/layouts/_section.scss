@@ -11,6 +11,6 @@ section.container {
   grid-gap: var(--space-s);
 }
 
-div.container:not(#main > div.container) {
+#files, #styles, #profile {
   margin-block-start: var(--space-2xl);
 }

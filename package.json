@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/RVCC-IDMX/style-stage-emgrey02#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.5.0",
-    "parcel": "^2.5.0",
     "sass": "^1.51.0"
   }
 }

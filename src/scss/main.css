@@ -104,10 +104,6 @@ p {
   padding: var(--space-3xs);
 }
 
-a {
-  pointer-events: all;
-}
-
 @media print {
   h1 {
     color: black;

@@ -1,6 +1,9 @@
-
 aside.profile {
   padding-inline: var(--space-xs);
+
+  & #profile-title {
+    text-align: center;
+  }
 
   & div.container {
     margin-inline: auto;
@@ -17,16 +20,20 @@ aside.profile {
     position: relative;
 
     &::before {
-      content: '';
+      content: "";
       width: 439px;
       height: 360px;
-      background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651770719/Vector_9_opy3hn.svg');
+      background-image: url("https://res.cloudinary.com/greypse/image/upload/v1651770719/Vector_9_opy3hn.svg");
       position: absolute;
       inset-block-start: -6em;
       z-index: -1;
       background-repeat: no-repeat;
-      opacity: .3;
+      opacity: 0.3;
     }
+  }
+
+  & li span:first-child {
+    font-weight: 500;
   }
 }
 
@@ -40,7 +47,7 @@ aside.profile {
       transition: transform 300ms;
       z-index: 2;
       padding: 0;
-      
+
       & div.container {
         margin: 0;
         padding: 0;
@@ -48,37 +55,36 @@ aside.profile {
         position: relative;
         background-color: var(--purple-dark);
         border: 1px solid var(--grey-light);
-  
+
         & > a {
           grid-column: 2;
           position: absolute;
           inset-block-end: 1em;
         }
       }
-  
+
       & ul {
         flex-direction: column;
         align-self: start;
         padding: var(--space-s);
 
         &::before {
-          content:'';
+          content: "";
           background: none;
         }
       }
-  
+
       &:hover,
       &:focus-within {
         transform: translateX(0%);
       }
-  
+
       & #profile-title {
         writing-mode: vertical-lr;
         border-right: 1px solid var(--grey-dark);
-        padding-inline: .5em;
+        padding-inline: 0.5em;
         padding-block: 1em;
       }
     }
-
   }
 }

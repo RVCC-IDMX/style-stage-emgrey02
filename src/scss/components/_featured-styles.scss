@@ -1,25 +1,35 @@
 aside#styles {
-    margin-inline: var(--space-2xs);
+  margin-inline: var(--space-2xs);
 
-    & div.container {
-        width: fit-content;
-        margin-inline: auto;
-        grid-gap: var(--space-m);
-        align-items: center;
-        justify-items: center;
-    }
+  & div.container {
+    margin-inline: auto;
+    grid-gap: var(--space-m);
+    place-items: center;
+    max-width: 80ch;
+  }
 
-    & ul {
-        gap: var(--space-m);
-    }
+  & ul {
+    gap: var(--space-m);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+    width: 100%;
+  }
 
-    & a {
-        display: block;
-    }
+  & a {
+    display: block;
+  }
 
-    & li {
-        box-shadow: -5px -5px 0 var(--green-light), 10px 10px 0 var(--green-dark);
-        padding: 3em .5em;
-        background-image: url('https://res.cloudinary.com/greypse/image/upload/v1651623068/ffflux_2_seqtxl.svg');
+  & li {
+    box-shadow: -5px -5px 0 var(--green-light), 10px 10px 0 var(--green-dark);
+    padding: 3em 0.5em;
+    background-image: url("https://res.cloudinary.com/greypse/image/upload/v1651623068/ffflux_2_seqtxl.svg");
+    display: grid;
+    place-items: center;
+
+    &:nth-last-child(1):nth-child(odd) {
+      @media (min-width: 463px) and (max-width: 800px) {
+        grid-column: span 2;
+      }
     }
+  }
 }
